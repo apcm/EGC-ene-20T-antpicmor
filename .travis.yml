@@ -9,7 +9,7 @@ before_script:
 - psql -U postgres -c "ALTER USER decide CREATEDB"
 language: python
 python:
-- '3.6' 
+- '3.6'
 install:
 - pip install -r requirements.txt
 - pip install codacy-coverage
@@ -24,4 +24,9 @@ notifications:
     - other@example.com
     on_success: never
     on_failure: never
-
+deploy:
+  provider: heroku
+  app: antpicmor20ene
+  strategy: git
+  api_key:
+    secure: IFwqzLPl8iRz0wo3EmqI2T1v3RTrQSiQeqaSfTqc/BAnFf6dipVS5nV8twcwgup6ov+gKTkY1ju+npXSNUosVDBxeSFda3tCl45dQtOFLj0HipjYSXdy/FUGg++sFik00ZlH67gW0At4EHCyl8hIK5Nl8C5yCipSUqbw7e/1UT2dVqczrPqOCw/C7VcFE6zyDOtJ7HP+H4AZJhk4z7T6bQsd1R/vsDpIW39Tmct5espkRSTAQmBmjMWl8EFf6NSHQJy+170m4FcKA3gvPJinlG2xxLmDX3rnOg18mB3mdpVCLFfexARTel5PQ8Y+zcV2wlR7h9I2tLNdByYCuHZ0phwriZkjzZ6kiwSZ9SBth3GHx5QlOV739A0og8/XafEXMTANtfrMokv5yhU3UtILD6BEgSJBqGG7J8gMnXKe5zqav3CrGEGQzUI9ZBTwf2lM9iHyb18qviPXJZdOpT4/AWg1gesxINderipTnkUSvW64zDsMglFEwxMPx0op1eYAuF6QnShsSjYbWWRTgbZiuj3rrS+DNqfAQFwQlc3HSDEIAMM79QMqyxc479c00mkl8Vlnu58h+vLmNBc4gvb0dAjqReCeIsEoRQEv3+dZd6isSN3iDfuPWJza28Ysd3BVt64OYRFXtIZymqtPfWPtvjsKBN2M0qx6tjAlon+Oxu0=
