@@ -45,4 +45,4 @@ class MixnetCase(APITestCase):
         self.assertEqual(type(key["y"]), int)
 
         self.assertEqual(sorted(clear), sorted(clear1))
-'''
+
